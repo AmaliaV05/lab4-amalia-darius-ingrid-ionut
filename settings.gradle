@@ -1,2 +1,5 @@
 rootProject.name = 'tfe20lab3x'
+include 'client'
+include 'common'
+include 'server'
 
