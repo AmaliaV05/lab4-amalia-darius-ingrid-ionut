@@ -7,6 +7,7 @@ import lab4.remoting.common.StudentService;
 import java.util.List;
 
 public class StudentServiceClient implements StudentService {
+
     @Autowired
     private StudentService studentService;
 
@@ -14,5 +15,20 @@ public class StudentServiceClient implements StudentService {
     @Override
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
+    }
+
+    @Override
+    public void save(Student student) {
+
+    }
+
+    @Override
+    public void update(Student student) {
+
+    }
+
+    @Override
+    public void delete(Long id) {
+
     }
 }

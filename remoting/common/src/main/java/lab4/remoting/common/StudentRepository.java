@@ -2,12 +2,9 @@ package lab4.remoting.common;
 
 import java.util.List;
 
-public interface StudentService {
-    List<Student> getAllStudents();
-
+public interface StudentRepository {
+    List<Student> findAll();
     void save(Student student);
-
-    void update(Student student);
-
+    void  update(Student student);
     void delete(Long id);
 }

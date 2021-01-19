@@ -1,29 +1,32 @@
 package lab4.remoting.client.config;
 
-import lab4.remoting.client.service.StudentServiceClient;
+import lab4.remoting.client.repository.ApartmentRepositoryClient;
+import lab4.remoting.client.service.*;
+import lab4.remoting.common.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.rmi.RmiProxyFactoryBean;
 import lab4.remoting.client.ui.ClientConsole;
-import lab4.remoting.common.StudentService;
 
 @Configuration
 public class ClientConfig {
     @Bean
     RmiProxyFactoryBean rmiProxyFactoryBean() {
         RmiProxyFactoryBean rmiProxyFactoryBean = new RmiProxyFactoryBean();
-        rmiProxyFactoryBean.setServiceUrl("rmi://localhost:1099/StudentService");
-        rmiProxyFactoryBean.setServiceInterface(StudentService.class);
+        rmiProxyFactoryBean.setServiceUrl("rmi://localhost:1099/ApartmentService");
+        rmiProxyFactoryBean.setServiceInterface(ApartmentService.class);
         return rmiProxyFactoryBean;
     }
 
     @Bean
     ClientConsole clientConsole() {
-        return new ClientConsole(studentServiceClient());
+        return new ClientConsole(apartmentServiceClient());
     }
 
     @Bean
-    StudentService studentServiceClient() {
-        return new StudentServiceClient();
-    }
+    ApartmentService apartmentServiceClient() { return new ApartmentServiceClient(); }
+
+/*    @Bean
+    ApartmentRepository apartmentRepositoryClient() {return new ApartmentRepositoryClient(); }*/
+
 }

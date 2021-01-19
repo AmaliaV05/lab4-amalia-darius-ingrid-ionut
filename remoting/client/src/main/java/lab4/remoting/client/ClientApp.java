@@ -1,6 +1,6 @@
 package lab4.remoting.client;
 
-import lab4.remoting.client.ui.ClientConsole;
+import lab4.remoting.client.ui.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class ClientApp {
