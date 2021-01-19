@@ -1,5 +1,6 @@
 package lab4.remoting.server.config;
 
+import lab4.remoting.common.ApartmentRepository;
 import lab4.remoting.common.ApartmentService;
 import lab4.remoting.server.service.ApartmentServiceImpl;
 import org.springframework.context.annotation.Bean;
@@ -8,11 +9,14 @@ import org.springframework.remoting.rmi.RmiServiceExporter;
 
 @Configuration
 public class ServerConfig {
+
+    ApartmentRepository apartmentRepository = null;
+
     @Bean
     RmiServiceExporter rmiServiceExporter() {
         RmiServiceExporter rmiServiceExporter = new RmiServiceExporter();
         rmiServiceExporter.setServiceInterface(ApartmentService.class);
-        rmiServiceExporter.setService(new ApartmentServiceImpl());
+        rmiServiceExporter.setService(new ApartmentServiceImpl(apartmentRepository));
         rmiServiceExporter.setServiceName("ApartmentService");
         return rmiServiceExporter;
     }

@@ -1,8 +1,8 @@
 package lab4.remoting.client.config;
 
-import lab4.remoting.client.repository.ApartmentRepositoryClient;
 import lab4.remoting.client.service.*;
 import lab4.remoting.common.*;
+import lab4.remoting.server.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.rmi.RmiProxyFactoryBean;
@@ -26,7 +26,7 @@ public class ClientConfig {
     @Bean
     ApartmentService apartmentServiceClient() { return new ApartmentServiceClient(); }
 
-/*    @Bean
-    ApartmentRepository apartmentRepositoryClient() {return new ApartmentRepositoryClient(); }*/
+    @Bean
+    ApartmentRepository apartmentRepository() { return new ApartmentRepositoryImpl(); }
 
 }
