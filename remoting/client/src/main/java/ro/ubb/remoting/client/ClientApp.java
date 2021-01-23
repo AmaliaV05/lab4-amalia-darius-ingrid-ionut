@@ -1,0 +1,20 @@
+package ro.ubb.remoting.client;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import ro.ubb.remoting.client.ui.ClientConsole;
+
+import java.io.IOException;
+
+public class ClientApp {
+    public static void main(String[] args) throws IOException {
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(
+                        "ro.ubb.remoting.client.config"
+                );
+
+        ClientConsole clientConsole = context.getBean(ClientConsole.class);
+        clientConsole.runConsole();
+
+        System.out.println("bye client");
+    }
+}

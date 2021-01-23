@@ -1,7 +1,7 @@
 allprojects {
     apply plugin: 'java'
 
-    group 'lab4.remoting'
+    group 'ro.ubb.remoting'
     version '1.0-SNAPSHOT'
 
     repositories {
