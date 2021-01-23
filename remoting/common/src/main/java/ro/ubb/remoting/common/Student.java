@@ -1,4 +1,4 @@
-package lab4.remoting.common;
+package ro.ubb.remoting.common;
 
 import java.io.Serializable;
 

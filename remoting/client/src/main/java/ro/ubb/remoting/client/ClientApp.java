@@ -1,13 +1,15 @@
-package lab4.remoting.client;
+package ro.ubb.remoting.client;
 
-import lab4.remoting.client.ui.ClientConsole;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import ro.ubb.remoting.client.ui.ClientConsole;
+
+import java.io.IOException;
 
 public class ClientApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(
-                        "lab4.remoting.client.config"
+                        "ro.ubb.remoting.client.config"
                 );
 
         ClientConsole clientConsole = context.getBean(ClientConsole.class);
